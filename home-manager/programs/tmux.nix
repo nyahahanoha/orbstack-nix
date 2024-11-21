@@ -5,7 +5,7 @@
     clock24 = true;
     keyMode = "vi";
     mouse = true;
-    shortcut = "a";
+    shortcut = "j";
     terminal = "screen-256color";
     extraConfig = ''
       # ウィンドウを閉じた時に番号を詰める
