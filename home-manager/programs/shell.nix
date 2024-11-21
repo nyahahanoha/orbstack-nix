@@ -42,5 +42,12 @@
       
       export LC_CTYPE="en_US.UTF-8"
     '';
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = [
+        "main"
+        "brackets"
+      ];
+    };
   };
 }

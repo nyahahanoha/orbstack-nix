@@ -34,5 +34,4 @@
     python3
     rustup
   ];
-
 }
