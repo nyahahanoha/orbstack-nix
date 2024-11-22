@@ -3,7 +3,6 @@
   imports = [
     home-manager.nixosModules.home-manager
   ];
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -34,7 +33,6 @@
 
       home.packages = with pkgs; [
         # standard tools
-        age
         pdf2svg
 
         # networking tools

@@ -81,6 +81,12 @@
     vim
     curl
   ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gtk2;
+  };
+
   # Set the default editor to vim
   environment.variables.EDITOR = "vim";
 }
