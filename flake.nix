@@ -3,21 +3,31 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.nyahahanoha = nixpkgs.lib.nixosSystem {
-      system = "aarch64-linux";
+  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs: 
+  let
+    user = "nyahahanoha";
+    system = "aarch64-linux";
+  in
+  {
+    nixosConfigurations.${user} = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit user;
+        inherit system;
+        inherit home-manager;
+        inherit sops-nix;
+      };
       modules = [
         ./configuration
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.nyahahanoha = import ./home-manager;
-        }
+        ./secrets
+        ./home-manager
       ];
     };
   };

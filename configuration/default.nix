@@ -2,8 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, modulesPath, ... }:
-
+{ config, pkgs, modulesPath, user, ... }:
 {
   imports =
     [
@@ -15,7 +14,7 @@
       ./orbstack.nix
     ];
 
-  users.users.nyahahanoha = {
+  users.users.${user} = {
     uid = 501;
     extraGroups = [ "wheel" ];
 
@@ -23,7 +22,7 @@
     isSystemUser = true;
     group = "users";
     createHome = true;
-    home = "/home/nyahahanoha";
+    home = "/home/${user}";
     homeMode = "700";
     useDefaultShell = true;
     shell = pkgs.zsh;

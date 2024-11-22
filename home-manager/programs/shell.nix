@@ -5,6 +5,7 @@
     shellAliases = {
       docker = "mac docker";
       kubectl = "mac kubectl";
+      brew = "mac brew";
       home = "cd /Users/\${USER}";
       ls = "ls -1 --color";
       la = "ls -a";

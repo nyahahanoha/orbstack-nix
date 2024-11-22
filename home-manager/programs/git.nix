@@ -4,6 +4,11 @@
     enable = true;
     userName = "nyahahanoha";
     userEmail = "nyahahanoha.pc@gmail.com";
+    ignores = [
+      "id_*"
+      "*.swp"
+      "*.bk"
+    ];
     extraConfig = {
       init = {
         defaultBranch = "main";
