@@ -21,7 +21,6 @@
         inherit user;
         inherit system;
         inherit home-manager;
-        inherit sops-nix;
       };
       modules = [
         ./configuration
