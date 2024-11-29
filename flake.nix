@@ -7,10 +7,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
   let
     user = "nyahahanoha";
     system = "aarch64-linux";
@@ -26,7 +25,6 @@
       };
       modules = [
         ./configuration
-        ./secrets
         ./home-manager
       ];
     };
