@@ -34,6 +34,9 @@
       home.packages = with pkgs; [
         # standard tools
         pdf2svg
+        toybox
+        unzip
+        zip
 
         # networking tools
         dnsutils

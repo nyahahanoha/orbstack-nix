@@ -6,6 +6,7 @@
       docker = "mac docker";
       kubectl = "mac kubectl";
       brew = "mac brew";
+      arp-scan = "mac arp-scan";
       home = "cd /Users/\${USER}";
       ls = "ls -1 --color";
       la = "ls -a";
@@ -26,6 +27,24 @@
         ssh-keygen -R $host
         echo "add $host to known_hosts"
         ssh-keyscan -H $host >> "$HOME"/.ssh/known_hosts
+      }
+
+      function uncomp() {
+        type=$1
+        path=$2
+        if [ "$1" = "tar" ]; then
+          tar -xvf $path
+        elif [ "$1" = "zip" ]; then
+          unzip $path
+        elif [ "$1" = "gz" ]; then
+          tar -zxvf $path
+        elif [ "$1" = "bz2" ]; then
+          tar -jxvf $path
+        elif [ "$1" = "xz" ]; then
+          tar -Jxvf $path
+        else
+          echo "not supported this file type"
+        fi
       }
       
       precmd() {
