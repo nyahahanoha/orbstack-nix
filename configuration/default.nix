@@ -28,6 +28,7 @@
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
 
@@ -86,6 +87,10 @@
     enable = true;
     pinentryPackage = pkgs.pinentry-gtk2;
   };
+
+  fonts.fonts = with pkgs; [
+    noto-fonts-cjk-sans # Noto CJKフォント
+  ];
 
   # Set the default editor to vim
   environment.variables.EDITOR = "vim";

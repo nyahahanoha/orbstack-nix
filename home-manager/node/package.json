@@ -1,7 +1,0 @@
-{
-	"name": "npm-packages",
-	"version": "1.0.0",
-	"dependencies": {
-		"md-to-pdf": "^5.2.4"
-	}
-}

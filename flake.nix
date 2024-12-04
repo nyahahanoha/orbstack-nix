@@ -20,6 +20,7 @@
       specialArgs = {
         inherit user;
         inherit system;
+        inherit nixpkgs;
         inherit home-manager;
       };
       modules = [
