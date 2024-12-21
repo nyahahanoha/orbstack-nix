@@ -19,6 +19,7 @@
 
       home.packages = with pkgs; [
         # standard tools
+        md2pdf
         mdr
         pandoc
         pdf2svg
@@ -28,9 +29,10 @@
         zip
 
         # control tools
-        krew
         kubectl
+        kubectx
         kubernetes-helm
+        postgresql
 
         # environment tools
         devenv
@@ -44,6 +46,7 @@
         rustscan
 
         # programing tools
+        gcc
         python3
         rustup
       ];

@@ -3,7 +3,7 @@
   imports = [
     ./git.nix
     ./go.nix
-    ./neovim.nix
+    ./neovim
     ./shell
     ./tmux.nix
   ];
