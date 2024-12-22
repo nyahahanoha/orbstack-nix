@@ -23,6 +23,9 @@ in
       mason-lspconfig-nvim
       mason-null-ls-nvim
       mason-nvim
+
+      # latex
+      vimtex
       
       # thema plugins
       tokyonight-nvim

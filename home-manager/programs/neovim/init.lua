@@ -41,23 +41,13 @@ vim.cmd([[colorscheme tokyonight-moon]])
 
 -- language 
 local lspEnsuredTools = {
-  -- lua
   'lua_ls',
-
-  -- rust
   'rust_analyzer',
 }
 local formatterEnsuredTools = {
-  -- json
   'jq',
-
-  -- lua
   'stylua',
-
-  -- markdown
   'markdownlint',
-
-  -- shell
   'shfmt'
 }
 
