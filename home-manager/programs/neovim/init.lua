@@ -44,9 +44,6 @@ local lspEnsuredTools = {
   -- lua
   'lua_ls',
 
-  -- nix
-  'nil_ls',
-
   -- rust
   'rust_analyzer',
 }
