@@ -19,11 +19,10 @@
 
       home.packages = with pkgs; [
         # standard tools
-        md2pdf
         mdr
         pandoc
         pdf2svg
-        texliveMedium
+        texlive.combined.scheme-full
         unzip
         wget
         zip
@@ -49,6 +48,9 @@
         gcc
         python3
         rustup
+
+        # library
+        librsvg
       ];
     };
   };

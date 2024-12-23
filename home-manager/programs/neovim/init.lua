@@ -1,3 +1,11 @@
+-- function
+local getKeys = function(inputTable)
+  local outputTable = {}
+  for k, _ in pairs(inputTable) do
+    table.insert(outputTable, k)
+  end
+end
+
 -- common configuration
 local commonOptions = {
   cursorline = true,
@@ -5,7 +13,6 @@ local commonOptions = {
   showmatch = true,
   wrap = true,
   splitright = true,
-
   ignorecase = true, smartcase = true, wrapscan = true,
 
   expandtab = true,
@@ -40,23 +47,28 @@ require("tokyonight").setup{
 vim.cmd([[colorscheme tokyonight-moon]])
 
 -- language 
-local lspEnsuredTools = {
-  'lua_ls',
-  'rust_analyzer',
-}
-local formatterEnsuredTools = {
-  'jq',
-  'stylua',
-  'markdownlint',
-  'shfmt'
+require("mason").setup()
+
+local lspEnsured = {
+  lua_ls = {},
+  rust_analyzer = {}
 }
 
-require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = lspEnsuredTools,
+  ensure_installed = getKeys(lspEnsured),
   handlers = {},
 }
+for k, v in pairs(lspEnsured) do
+  require("lspconfig")[k].setup(v)
+end
+
 require("mason-null-ls").setup{
-  ensure_installed = formatterEnsuredTools,
+  ensure_installed = {
+    "jq",
+    "stylua",
+    "markdownlint",
+    "shfmt",
+  },
   handlers = {},
 }
+
