@@ -34,7 +34,7 @@
         postgresql
 
         # environment tools
-        devenv
+        direnv
 
         # networking tools
         dnsutils

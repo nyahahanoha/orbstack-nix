@@ -23,3 +23,5 @@ source <(kubectl completion zsh)
 export LC_CTYPE="en_US.UTF-8"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+eval "$(direnv hook zsh)"
+
