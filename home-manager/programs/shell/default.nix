@@ -9,7 +9,7 @@
       arp-scan = "mac arp-scan";
       home = "cd /Users/\${USER}";
       orb= "mac";
-      update = "sudo nixos-rebuild switch --flake /home/\${USER}/.config/nixos#\${USER}";
+      update = "sudo nixos-rebuild switch --flake /home/\${USER}/.config/orbstack-nix#\${USER}";
 
       # common aliases
       ls = "ls -1 --color";
